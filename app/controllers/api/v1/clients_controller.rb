@@ -1,3 +1,5 @@
+require 'pry'
+
 class Api::V1::ClientsController < ApplicationController
     skip_before_action :authorized, only: []
 
@@ -11,8 +13,8 @@ class Api::V1::ClientsController < ApplicationController
     end
 
     def show
+        binding.pry
         @client = Client.all.find_by(id: params[:id])
-        puts @client
         render :json => @client
     end
 
