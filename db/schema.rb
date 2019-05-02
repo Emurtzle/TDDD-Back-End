@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_04_29_173955) do
   create_table "clients", force: :cascade do |t|
     t.string "firstName"
     t.string "lastName"
+    t.string "address"
     t.string "phone"
     t.string "email"
     t.string "fax"

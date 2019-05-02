@@ -7,6 +7,11 @@ class Api::V1::DuedatesController < ApplicationController
 
     end
 
+    def getAll
+        @duedates = Duedate.all
+        render :json => @duedates
+    end
+
     def index
         @duedates = Duedate.all.where(client_id: params[:client_id])
         render :json => @duedates

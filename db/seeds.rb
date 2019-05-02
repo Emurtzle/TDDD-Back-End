@@ -20,6 +20,7 @@ for i in 0..clientCount do
 
     firstName = Faker::Name.first_name
     lastName = Faker::Name.last_name
+    address = Faker::Address.full_address
     phone = Faker::PhoneNumber.cell_phone
     email = Faker::Internet.email(firstName)
     fax = "#{Faker::Number.number(3)}-#{Faker::Number.number(3)}-#{Faker::Number.number(3)}"
@@ -38,6 +39,7 @@ for i in 0..clientCount do
     client = Client.create(
         firstName: firstName,
         lastName: lastName,
+        address: address,
         phone: phone,
         email: email,
         fax: fax,
