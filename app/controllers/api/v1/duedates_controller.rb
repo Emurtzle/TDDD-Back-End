@@ -17,20 +17,15 @@ class Api::V1::DuedatesController < ApplicationController
         failed = []
 
         params[:data].each do |dd|
-            tempdd = Duedate.create(client_id: dd[:client_id], name: dd[:name], description: dd[:description], progress: dd[:progress], status: dd[:status])
+            tempdd = Duedate.create(client_id: dd[:client_id], name: dd[:name], description: dd[:description], dateDue: dd[:dateDue], progress: dd[:progress], status: dd[:status])
 
             if tempdd.valid?
-                succeded.push(tempdd)
+                succeded.push(DuedateSerializer.new(tempdd))
             else
                 failed.push(dd)
             end
-            binding.pry
         end
         render json: {data: {succeded: succeded, failed: failed}}, status: :created
-    end
-
-
-
     end
 
     def getAll
@@ -51,6 +46,7 @@ class Api::V1::DuedatesController < ApplicationController
     private
 
     def duedate_params
-        params.require(:due_date).permit(:id, :client_id, :name, :description, :progress, :status)
+        params.require(:due_date).permit(:id, :client_id, :name, :description, :dateDue, :progress, :status)
     end
 
+end
