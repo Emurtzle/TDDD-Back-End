@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
       get '/duedates', to: 'duedates#getAll'
+      post '/duedates/createMany', to: 'duedates#createMany'
       
     end
   end
