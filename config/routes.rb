@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
+
+      post '/clients/csv', to: 'clients#csv'
+
       get '/duedates', to: 'duedates#getAll'
       post '/duedates/createMany', to: 'duedates#createMany'
       

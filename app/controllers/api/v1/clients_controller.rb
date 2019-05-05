@@ -12,6 +12,10 @@ class Api::V1::ClientsController < ApplicationController
         end
     end
 
+    def csv
+        binding.pry
+    end
+
     def index
         @clients = Client.all
         render :json => @clients

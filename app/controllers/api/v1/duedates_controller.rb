@@ -28,6 +28,14 @@ class Api::V1::DuedatesController < ApplicationController
         render json: {data: {succeded: succeded, failed: failed}}, status: :created
     end
 
+    def delete
+
+    end
+
+    def deleteAll
+
+    end
+
     def getAll
         @duedates = Duedate.all
         render :json => @duedates
