@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
-  devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   namespace :api do
     namespace :v1 do
@@ -11,7 +10,6 @@ Rails.application.routes.draw do
         resources :duedates
       end
 
-      root "welcome#index"
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
 
