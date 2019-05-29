@@ -11,6 +11,7 @@ Rails.application.routes.draw do
         resources :duedates
       end
 
+      root "welcome#index"
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
 
