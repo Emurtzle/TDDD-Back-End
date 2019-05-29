@@ -1,6 +1,4 @@
-require 'pry'
-
-class Api::V1::DuedatesController < ApplicationController
+class Api::V1::DuedatesController < ApiController
     skip_before_action :authorized, only: []
 
     def create

@@ -70,4 +70,4 @@ for i in 0..clientCount do
             status: temp
         )
     end
-end
+endAdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
