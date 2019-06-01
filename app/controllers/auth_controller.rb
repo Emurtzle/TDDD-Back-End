@@ -1,4 +1,4 @@
-class Api::V1::AuthController < ApiController
+class AuthController < ApiController
     skip_before_action :authorized, only: [:create]
 
     def create

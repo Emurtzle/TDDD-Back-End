@@ -1,6 +1,6 @@
 require 'pry'
 
-class Api::V1::ClientsController < Apicontroller
+class ClientsController < Apicontroller
     skip_before_action :authorized, only: []
 
     def create

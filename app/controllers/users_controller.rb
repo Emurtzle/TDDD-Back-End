@@ -1,4 +1,4 @@
-class Api::V1::UsersController < ApiController
+class UsersController < ApiController
     skip_before_action :authorized, only: [:create]
    
     def profile
