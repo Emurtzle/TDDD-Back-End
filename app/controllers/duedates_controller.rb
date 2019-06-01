@@ -1,4 +1,4 @@
-class DuedatesController < ApiController
+class DuedatesController < ApplicationController
     skip_before_action :authorized, only: []
 
     def create
